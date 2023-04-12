@@ -1,6 +1,26 @@
 <%- include("header") -%>
-
-
-<h1>This is home</h1>
-
+<header class="bg-slate-800 text-gray-100 flex justify-between px-2 py-4 items-center border-b-2 border-gray-500">
+  <div>
+    <h1 class="uppercase font-bold text-2xl" >Blog site</h1>
+  </div>
+  <div class="flex justify-between">
+    <div class="p-2">
+      <a href="/work" class="uppercase">Home</a>
+    </div>
+    <div class="p-2">
+      <a href="" class="uppercase">About</a>
+    </div>
+    <div class="p-2">
+      <a href="" class="uppercase">Contact</a>
+    </div>
+  </div>
+</header>
+<main class="flex flex-col w-4/5 mx-auto gap-y-2 mt-2">
+<% blogItems.forEach(blogItem => { %>
+  <div>
+    <h1 class="font-medium uppercase"> <%= blogItem.blogTitle%></h1>
+    <h2> <%= blogItem.blogContent%></h2>
+  </div>
+<% });%>
+</main>
 <%- include("footer") -%>
